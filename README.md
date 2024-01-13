@@ -10,7 +10,7 @@ It has the same functionality as the [Chrome extension](https://chromewebstore.g
 - **In the Applications folder, right-click** the `Windowed.app` and select `Open`. Then it will pop up the app like this:
 
 <p align="center">
-  <img src="./assets/open.png" width=512>
+  <img src="./assets/open.png" width=384>
   <br>
 </p>
 
@@ -26,28 +26,28 @@ It has the same functionality as the [Chrome extension](https://chromewebstore.g
 ### Toolbar Button
 
 <p align="center">
-  <img src="./assets/pop-up-toolbar.png" width=512>
+  <img src="./assets/pop-up-toolbar.png">
   <br>
 </p>
 
 ### Pop-up 
 
 <p align="center">
-  <img src="./assets/pop-up-video.png" width=512>
+  <img src="./assets/pop-up-video.png">
   <br>
 </p>
 
 ### In-Window Mode
 
 <p align="center">
-  <img src="./assets/in-window.png" width=512>
+  <img src="./assets/in-window.png">
   <br>
 </p>
 
 ### Picture-in-Picture Mode
 
 <p align="center">
-  <img src="./assets/pic-in-pic.png" width=512>
+  <img src="./assets/pic-in-pic.png">
   <br>
 </p>
 
@@ -57,7 +57,7 @@ It has the same functionality as the [Chrome extension](https://chromewebstore.g
 - Run `bash convert.sh` to convert the original Chrome extension to Safari extension (the converted extension will be in the `windowed-safari-app` folder)
 
 > [!NOTE]
-> The released extension is signed with my own Apple Developer ID without any verification from Apple Developer Program. So it won't show up in the Apple Extension Gallery - Apple Store. It would be great if someone can help me to sign the extension with a verified Apple Developer ID to distribute it in the Apple Store. Please contact me if you are willing to help.
+> The released extension is signed with my own Apple Developer ID without any verification from Apple Developer Program. So it won't show up in the Apple Extension Gallery - Apple Store. It would be great if someone can help me to sign the extension with a verified Apple Developer ID to distribute it in the Apple Store. Please contact me if you are willing to help. :bowtie:
 
 ## Credits
 
