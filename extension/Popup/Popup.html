@@ -6,23 +6,21 @@
       html {
         padding: 0px;
         margin: 0px;
-        background-color: #ededed;
+        background-color: rgba(237, 237, 237, 0.1);
       }
       @media (prefers-color-scheme: dark) {
         body,
         html {
           /* Explicit background color for firefox */
-          background-color: #ededed;
+          background-color: rgba(237, 237, 237, 0.1);
         }
       }
-        
       .popup {
         font-family: system-ui, sans-serif;
         user-select: none;
-
-        background-color: #ededed;
         padding: 20px;
         
+        background-color: rgba(237, 237, 237, 0.1);
         font-size: 14px;
         color: black;
         z-index: 2147483647;
@@ -45,7 +43,6 @@
       .popup [data-target] {
         cursor: pointer;
         padding: 5px;
-        background-color: #ededed;
         color: black; /* Force black for if the page has color: white */
 
         display: flex;
@@ -72,6 +69,7 @@
       [data-target]:hover {
         filter: brightness(0.9);
         border-radius: 5px;
+        background-color: rgba(192, 192, 192, 0.5);
       }
 
       [data-target] > input[type="radio"],
@@ -112,7 +110,6 @@
         padding: 1.25em;
         padding-top: 0.25em;
         padding-bottom: 0.25em;
-        background-color: #ededed;
 
         display: flex;
         flex-direction: row;

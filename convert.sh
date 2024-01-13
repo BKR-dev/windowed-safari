@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 ROOT=$(pwd)
+echo $ROOT
 
 xcrun safari-web-extension-converter \
   $ROOT/extension \
