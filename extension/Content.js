@@ -320,27 +320,24 @@ const code_to_insert_in_page = on_webpage`{
 
       let popup = createElementFromHTML(`
         <div class="popup" tabIndex="1" style="
-          position: absolute;
-          top: ${last_click_y}px;
-          left: ${last_click_x}px;
-          transform: ${top_vs_bottom} ${left_vs_right};
-        ">
+            position: absolute;
+            top: ${last_click_y}px;
+            left: ${last_click_x}px;
+            transform: ${top_vs_bottom} ${left_vs_right};
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+          ">
           ${
             video_element
               ? Button({
                   icon: browser.runtime.getURL("Images/Icon_PiP@scalable.svg"),
-                  text: "PiP",
+                  text: "Pic-in-Pic",
                   title: "Picture-in-picture (p)",
                   target: "picture-in-picture",
                 })
               : ""
           }
-          ${Button({
-            icon: browser.runtime.getURL("Images/Icon_Windowed@scalable.svg"),
-            text: "Windowed",
-            title: "Windowed (w)",
-            target: "windowed",
-          })}
           ${Button({
             icon: browser.runtime.getURL(
               "Images/Icon_InWindow_Mono@scalable.svg",
@@ -368,18 +365,19 @@ const code_to_insert_in_page = on_webpage`{
               position: fixed;
               top: 0; left: 0;
               right: 0; bottom: 0;
-              background-color: rgba(0,0,0,.8);
+              background-color: rgb(0,0,0);
               pointer-events: none;
               z-index: ${max_z_index};
             "
           ></div>
-
           <div class="popup" tabIndex="1" style="
             position: fixed;
             top: 25vh;
             left: 50vw;
             transform: translateX(-50%) translateY(-50%);
-            font-size: 20px;
+            font-size: 16px;
+            border-radius: 10px;
+            padding: 10px;
           ">
             <div style="padding: 1.25em; padding-bottom: 0.25em; padding-top: 0.25em">Enter fullscreen</div>
             <div style="height: 10px"></div>
@@ -389,18 +387,12 @@ const code_to_insert_in_page = on_webpage`{
                     icon: browser.runtime.getURL(
                       "Images/Icon_PiP@scalable.svg",
                     ),
-                    text: "PiP",
+                    text: "Pic-in-Pic",
                     title: "Picture in picture (p)",
                     target: "picture-in-picture",
                   })
                 : ""
             }
-            ${Button({
-              icon: browser.runtime.getURL("Images/Icon_Windowed@scalable.svg"),
-              text: "Windowed",
-              title: "Windowed (w)",
-              target: "windowed",
-            })}
             ${Button({
               icon: browser.runtime.getURL(
                 "Images/Icon_InWindow_Mono@scalable.svg",
@@ -833,6 +825,7 @@ let create_style_rule = () => {
       max-width: initial !important;
       max-height: initial !important;
       z-index: ${max_z_index} !important;
+      background-color: rgb(0,0,0) !important;
     }
 
     [data-${body_class}] [data-${fullscreen_parent}] {
@@ -841,7 +834,7 @@ let create_style_rule = () => {
       z-index: ${max_z_index} !important;
 
       /* Debugging */
-      background-color: rgba(0,0,0,.1) !important;
+      background-color: rgb(0,0,0) !important;
     }
 
     /* Not sure if this is necessary, but putting it here just in case */
@@ -856,6 +849,7 @@ let create_style_rule = () => {
 
       /* For debugging, leaving this just in here so I see when something goes wrong */
       /* background-color: rgb(113, 0, 180); */
+      background-color: rgb(0,0,0)
     }
 
     /* I know I want it to be generic, but still this is a youtube specific fix */

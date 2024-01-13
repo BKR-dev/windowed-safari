@@ -1,23 +1,14 @@
 {
-  "name": "Windowed - floating Youtube/every website",
+  "name": "Windowed",
   "short_name": "Windowed",
-  "description": "Changes fullscreen buttons to go into a popup. Works for every website that uses fullscreen, including Youtube, Vimeo, Netflix",
-  "developer": {
-    "name": "Michiel Dral",
-    "url": "https://dral.eu/"
-  },
-  "version": "31",
+  "description": "Changes fullscreen buttons to go into a popup. Works for every website that uses fullscreen, including Youtube, Vimeo, Bilibili, and Netflix.",
+  "version": "1.0.0",
   "manifest_version": 2,
   "permissions": ["storage", "tabs", "<all_urls>"],
-  "applications": {
-    "gecko": {
-      "id": "{477dbe5e-1742-4641-a2c3-b6113bb5cf6e}"
-    }
-  },
   "browser_action": {
     "default_popup": "Popup/Popup.html",
     "default_icon": {
-      "32": "/Images/Icon_Windowed_Mono@1x.png"
+      "32": "/Images/Icon_Windowed_Mono@1x.svg"
     }
   },
   "content_scripts": [
@@ -40,9 +31,14 @@
     "script_to_insert_directly_into_page.js"
   ],
   "icons": {
-    "16": "Icons/Icon_16.png",
-    "32": "Icons/Icon_32.png",
-    "64": "Icons/Icon_64.png",
-    "128": "Icons/Icon_128.png"
+      "16": "/Images/Icon-16.png",
+      "32": "/Images/Icon-32.png",
+      "48": "/Images/Icon-48.png",
+      "64": "/Images/Icon-64.png",
+      "96": "/Images/Icon-96.png",
+      "128": "/Images/Icon-128.png",
+      "256": "/Images/Icon-256.png",
+      "512": "/Images/Icon-512.png",
+      "1024": "/Images/Icon-1024.png",
   }
 }
