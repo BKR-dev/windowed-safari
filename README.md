@@ -3,6 +3,22 @@
 The [Windowed extension](https://github.com/dralletje/Windowed) for [Apple Safari](https://www.apple.com/safari/).
 It has the same functionality as the [Chrome extension](https://chromewebstore.google.com/detail/windowed-floating-youtube/gibipneadnbflmkebnmcbgjdkngkbklb).
 
+<br>
+<table cellpadding="2">
+<!-- TABLE HEADER -->
+<th valign="middle">Windowed</th>
+<th valign="middle">Version</th>
+<th valign="middle">Link</th>
+<!-- TABLE BODY -->
+<tr>
+  <td valign="middle" align="center"><img src="extension/Images/Icon-512.png" width="48"></td>
+  <td valign="middle" align="center"><tt>1.0.0</tt></td>
+  <td valign="middle" align="center"><a href="https://github.com/kaiyuyue/Windowed-Safari/releases/download/1.0.0/Windowed.app.zip"><tt>Download</tt></a></td>
+</tr>
+</table>
+<br>
+
+
 ## Installation
 
 - Download the file `Windowed.app.zip` from [latest release](https://github.com/kaiyuyue/Windowed-Safari/releases).
@@ -23,28 +39,28 @@ It has the same functionality as the [Chrome extension](https://chromewebstore.g
 
 ## New UI
 
-### Toolbar Button
+- **Toolbar Button**
 
 <p align="center">
   <img src="./assets/pop-up-toolbar.png">
   <br>
 </p>
 
-### Pop-up 
+- **Pop-up** 
 
 <p align="center">
   <img src="./assets/pop-up-video.png">
   <br>
 </p>
 
-### In-Window Mode
+- **In-Window Mode**
 
 <p align="center">
   <img src="./assets/in-window.png">
   <br>
 </p>
 
-### Picture-in-Picture Mode
+- **Picture-in-Picture Mode**
 
 <p align="center">
   <img src="./assets/pic-in-pic.png">
