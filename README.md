@@ -5,7 +5,7 @@ It has the same functionality as the [Chrome extension](https://chromewebstore.g
 
 ## Installation
 
-- Download the file `Windowed.app.zip` from [latest release](./releases).
+- Download the file `Windowed.app.zip` from [latest release](https://github.com/kaiyuyue/Windowed-Safari/releases).
 - Unzip the file and drag it to your `Applications` folder.
 - **In the Applications folder, right-click** the `Windowed.app` and select `Open`. Then it will pop up the app like this:
 
@@ -56,7 +56,7 @@ It has the same functionality as the [Chrome extension](https://chromewebstore.g
 - Clone the repo
 - Run `bash convert.sh` to convert the original Chrome extension to Safari extension (the converted extension will be in the `windowed-safari-app` folder)
 - Develop and modify the code in Xcode
-- Contribution are definitely welcome to make it better for Safari
+- Contributions and PRs are definitely welcome to make it better for Safari
 
 > [!NOTE]
 > The released extension is signed with my own Apple Developer ID without any verification from Apple Developer Program. So it won't show up in the Apple Extension Gallery - Apple Store. It would be great if someone can help me to sign the extension with a verified Apple Developer ID to distribute it in the Apple Store. Please contact me if you are willing to help. :bowtie:
