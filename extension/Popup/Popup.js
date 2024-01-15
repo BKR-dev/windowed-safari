@@ -167,4 +167,4 @@ let initialize_page = async () => {
 
 run(initialize_page);
 
-export {};
+export { };

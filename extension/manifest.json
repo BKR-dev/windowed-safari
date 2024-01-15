@@ -2,13 +2,14 @@
   "name": "Windowed",
   "short_name": "Windowed",
   "description": "Changes fullscreen buttons to go into a popup. Works for every website that uses fullscreen, including Youtube, Vimeo, Bilibili, and Netflix.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "manifest_version": 2,
   "permissions": ["storage", "tabs", "<all_urls>"],
   "browser_action": {
     "default_popup": "Popup/Popup.html",
     "default_icon": {
-      "32": "/Images/Icon_Windowed_Mono@1x.svg"
+      "32": "/Images/Icon_Windowed_Mono@1x.svg",
+      "64": "/Images/Icon_Windowed_Mono@1x.svg"
     }
   },
   "content_scripts": [

@@ -1,9 +1,9 @@
 {
   // Alliases for different browsers
-  let requestFullscreen_aliasses = ["requestFullscreen","mozRequestFullScreen","webkitRequestFullscreen","webkitRequestFullScreen","msRequestFullscreen"];
-  let exitFullscreen_aliasses = ["exitFullscreen","webkitExitFullscreen","webkitCancelFullScreen","mozCancelFullScreen","msExitFullscreen"];
-  let fullscreenelement_aliasses = ["fullscreenElement","webkitFullscreenElement","mozFullscreenElement","mozFullScreenElement","msFullscreenElement","webkitCurrentFullScreenElement"];
-  let fullscreenchange_aliasses = ["fullscreenchange","webkitfullscreenchange","mozfullscreenchange","MSFullscreenChange"];
+  let requestFullscreen_aliasses = ["requestFullscreen", "mozRequestFullScreen", "webkitRequestFullscreen", "webkitRequestFullScreen", "msRequestFullscreen"];
+  let exitFullscreen_aliasses = ["exitFullscreen", "webkitExitFullscreen", "webkitCancelFullScreen", "mozCancelFullScreen", "msExitFullscreen"];
+  let fullscreenelement_aliasses = ["fullscreenElement", "webkitFullscreenElement", "mozFullscreenElement", "mozFullScreenElement", "msFullscreenElement", "webkitCurrentFullScreenElement"];
+  let fullscreenchange_aliasses = ["fullscreenchange", "webkitfullscreenchange", "mozfullscreenchange", "MSFullscreenChange"];
 
   const send_event = (element, type) => {
     const event = new Event(type, {
@@ -92,7 +92,7 @@
 
   let make_tab_exit_fullscreen = external_function(4);
 
-  let exitFullscreen = async function(original) {
+  let exitFullscreen = async function (original) {
     let windowed_fullscreen = document.querySelector('[data-windowed_long_id_that_does_not_conflict_active]');
 
     if (windowed_fullscreen) {
@@ -116,8 +116,7 @@
     }
   }
 
-  
-  const requestFullscreen_windowed = async function(original, ...args) {
+  const requestFullscreen_windowed = async function (original, ...args) {
     const element = this;
     element.dataset['windowed_long_id_that_does_not_conflict_select'] = true;
 
@@ -138,7 +137,7 @@
   // So firefox does not allow fullscreen calls from promises, even if it is basically sync.
   // Therefor I need to first define this as sync, and from here call the async version.
   let MUTATE_is_windowed_enabled = true;
-  let requestFullscreen = function(original, ...args) {
+  let requestFullscreen = function (original, ...args) {
     if (MUTATE_is_windowed_enabled === false) {
       return original()
     } else {
@@ -200,25 +199,25 @@
     }
   }
 
-  
+
   let original_requestFullscreen = null;
   requestFullscreen_aliasses.forEach(requestFullscreenAlias => {
     if (typeof Element.prototype[requestFullscreenAlias] === 'function') {
       let original_function = Element.prototype[requestFullscreenAlias];
       original_requestFullscreen = original_function;
-      Element.prototype[requestFullscreenAlias] = function(...args) {
+      Element.prototype[requestFullscreenAlias] = function (...args) {
         requestFullscreen.call(this, original_function.bind(this), ...args);
       };
     }
   });
 
-  
+
   let original_exitFullscreen = null;
   exitFullscreen_aliasses.forEach(exitFullscreenAlias => {
     if (typeof Document.prototype[exitFullscreenAlias] === 'function') {
       let original_function = Document.prototype[exitFullscreenAlias];
       original_exitFullscreen = original_function;
-      Document.prototype[exitFullscreenAlias] = function(...args) {
+      Document.prototype[exitFullscreenAlias] = function (...args) {
         exitFullscreen.call(this, original_function.bind(this), ...args);
       };
     }

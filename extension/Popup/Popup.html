@@ -1,214 +1,233 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
+
+<head>
+  <style>
+    body,
+    html {
+      padding: 0px;
+      margin: 0px;
+      background-color: rgba(237, 237, 237, 0.1);
+    }
+
+    @media (prefers-color-scheme: dark) {
+
       body,
       html {
-        padding: 0px;
-        margin: 0px;
+        /* Explicit background color for firefox */
         background-color: rgba(237, 237, 237, 0.1);
       }
-      @media (prefers-color-scheme: dark) {
-        body,
-        html {
-          /* Explicit background color for firefox */
-          background-color: rgba(237, 237, 237, 0.1);
-        }
-      }
+    }
+
+    .popup {
+      font-family: system-ui, sans-serif;
+      user-select: none;
+      padding: 20px;
+
+      background-color: rgba(237, 237, 237, 0.1);
+      font-size: 14px;
+      color: black;
+      z-index: 2147483647;
+      width: 300px;
+
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    @media (prefers-color-scheme: dark) {
       .popup {
-        font-family: system-ui, sans-serif;
-        user-select: none;
-        padding: 20px;
-        
-        background-color: rgba(237, 237, 237, 0.1);
-        font-size: 14px;
-        color: black;
-        z-index: 2147483647;
-        width: 300px;
-        
-        display: flex;
-        flex-direction: column;
-        text-align: left;
+        filter: invert(0.9);
       }
-      @media (prefers-color-scheme: dark) {
-        .popup {
-          filter: invert(0.9);
-        }
-      }
+    }
 
-      .popup:focus:not(:focus-visible) {
-        outline: none;
-      }
+    .popup:focus:not(:focus-visible) {
+      outline: none;
+    }
 
-      .popup [data-target] {
-        cursor: pointer;
-        padding: 5px;
-        color: black; /* Force black for if the page has color: white */
+    .popup [data-target] {
+      cursor: pointer;
+      padding: 5px;
+      color: black;
+      /* Force black for if the page has color: white */
 
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
 
-        font-size: inherit;
-        border: none;
-        box-shadow: none;
+      font-size: inherit;
+      border: none;
+      box-shadow: none;
 
-        white-space: nowrap;
-      }
+      white-space: nowrap;
+    }
 
-      [data-target]::-moz-focus-inner,
-      .popup::-moz-focus-inner {
-        border: none;
-      }
-      [data-target]:focus {
-        filter: brightness(0.95);
-      }
-      [data-target]:focus:not(:focus-visible) {
-        outline: none;
-      }
-      [data-target]:hover {
-        filter: brightness(0.9);
-        border-radius: 5px;
-        background-color: rgba(237, 237, 237, 1.0)
-      }
+    [data-target]::-moz-focus-inner,
+    .popup::-moz-focus-inner {
+      border: none;
+    }
 
-      [data-target] > input[type="radio"],
-      [data-target] > input[type="checkbox"] {
-        margin: 0;
-        margin-right: 20px;
-      }
-      [data-target] > img {
-        height: 1.2em;
-        width: 1.2em;
-        margin-right: 1em;
-      }
-    </style>
-    <style>
-      hide-if-no-picture-in-picture {
-        display: none;
-      }
-      .picture-in-picture-support hide-if-no-picture-in-picture {
-        all: inherit;
-      }
-        
-      h1,h2,h3 {
-        padding: 3px;
-        margin: 0px;
-      }
-    
-      p {
-        all: unset;
-        display: block;
-        padding: 3px;
-        font-size: 14px;
-      }
+    [data-target]:focus {
+      filter: brightness(0.95);
+    }
 
-      button {
-        width: 100%;
-        min-height: 28px;
-        cursor: pointer;
-        padding: 1.25em;
-        padding-top: 0.25em;
-        padding-bottom: 0.25em;
+    [data-target]:focus:not(:focus-visible) {
+      outline: none;
+    }
 
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+    [data-target]:hover {
+      filter: brightness(0.9);
+      border-radius: 5px;
+      background-color: rgba(237, 237, 237, 1.0)
+    }
 
-        font-size: inherit;
-        border: none;
-        box-shadow: none;
+    [data-target]>input[type="radio"],
+    [data-target]>input[type="checkbox"] {
+      margin: 0;
+      margin-right: 20px;
+    }
 
-        white-space: nowrap;
-      }
+    [data-target]>img {
+      height: 1.2em;
+      width: 1.2em;
+      margin-right: 1em;
+    }
+  </style>
+  <style>
+    hide-if-no-picture-in-picture {
+      display: none;
+    }
 
-      button::-moz-focus-inner {
-        border: none;
-      }
-      button:focus {
-        filter: brightness(0.95);
-      }
-      button:focus:not(:focus-visible) {
-        outline: none;
-      }
-      button:hover {
-        filter: brightness(0.9);
-      }
+    .picture-in-picture-support hide-if-no-picture-in-picture {
+      all: inherit;
+    }
 
-      button > input[type="radio"],
-      button > input[type="checkbox"] {
-        margin: 0;
-        margin-right: 16px;
-      }
-      button > img {
-        height: 1.2em;
-        width: 1.2em;
-        margin-right: 1em;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="popup" tabindex="1">
-      <h2 style="padding-bottom: 10px;">Windowed</h2>
-      
-      <div id="something-bad">
-        <p>...</p>
-      </div>
-      
-      <div id="disabled-because-security" style="display: none">
-        <p>For security reasons, Windowed is not supported on this domain.</p>
-      </div>
+    h1,
+    h2,
+    h3 {
+      padding: 3px;
+      margin: 0px;
+    }
 
-      <div id="need-a-refresh" style="display: none">
-        <p>You need to refresh this page for Windowed to function properly.</p>
-        <div style="height: 8px"></div>
-        <button class="reload">Reload page</button>
-      </div>
+    p {
+      all: unset;
+      display: block;
+      padding: 3px;
+      font-size: 14px;
+    }
 
-      <div id="working" style="display: none">
-        <h3>Website Settings</h3>
-        <p>
-            Fullscreen on
-            <select style="width: 100px;">
-              <option>this url</option>
-              <option data-placeholder="domain" style="color: gray">DOMAIN.COM</option>
-            </select>
-            should always:
-        </p>
-        
-        <div style="height: 5px"></div>
-        
-        <form>
-            <label data-target="ask" title="Ask">
-                <input type="radio" name="behaviour" value="ask" checked />
-                <img src="../Images/Icon_Ask@scalable.svg" />
-                <span>Ask</span>
-            </label>
-            
-            <label data-target="in-window" title="Fullscreen in the window.">
-                <input type="radio" name="behaviour" value="in-window" />
-                <img src="../Images/Icon_InWindow_Mono@scalable.svg" />
-                <span>In-Window</span>
-            </label>
-            
-            <label data-target="fullscreen" title="Fullscreen in the screen.">
-                <input type="radio" name="behaviour" value="fullscreen" />
-                <img src="../Images/Icon_EnterFullscreen@scalable.svg" />
-                <span>Fullscreen</span>
-            </label>
-            
-            <hide-if-no-picture-in-picture>
-                <label data-target="picture-in-picture" title="Picture-in-Picture mode.">
-                    <input type="radio" name="picture_in_picture" />
-                    <img src="../Images/Icon_PiP@scalable.svg" />
-                    <span>Pic-in-Pic</span>
-                </label>
-            </hide-if-no-picture-in-picture>
-            
-        </form>
-      </div>
+    button {
+      width: 100%;
+      min-height: 28px;
+      cursor: pointer;
+      padding: 1.25em;
+      padding-top: 0.25em;
+      padding-bottom: 0.25em;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      font-size: inherit;
+      border: none;
+      box-shadow: none;
+
+      white-space: nowrap;
+    }
+
+    button::-moz-focus-inner {
+      border: none;
+    }
+
+    button:focus {
+      filter: brightness(0.95);
+    }
+
+    button:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    button:hover {
+      filter: brightness(0.9);
+    }
+
+    button>input[type="radio"],
+    button>input[type="checkbox"] {
+      margin: 0;
+      margin-right: 16px;
+    }
+
+    button>img {
+      height: 1.2em;
+      width: 1.2em;
+      margin-right: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="popup" tabindex="1">
+    <h2 style="padding-bottom: 10px;">Windowed</h2>
+
+    <div id="something-bad">
+      <p>...</p>
     </div>
-    <script src="../Javascript/browser-polyfill.min.js"></script>
-    <script src="./Popup.js" type="module"></script>
-  </body>
+
+    <div id="disabled-because-security" style="display: none">
+      <p>For security reasons, Windowed is not supported on this domain.</p>
+    </div>
+
+    <div id="need-a-refresh" style="display: none">
+      <p>You need to refresh this page for Windowed to function properly.</p>
+      <div style="height: 8px"></div>
+      <button class="reload">Reload page</button>
+    </div>
+
+    <div id="working" style="display: none">
+      <h3>Website Settings</h3>
+      <p>
+        Fullscreen on
+        <select style="width: 100px;">
+          <option>this url</option>
+          <option data-placeholder="domain" style="color: gray">DOMAIN.COM</option>
+        </select>
+        should always:
+      </p>
+
+      <div style="height: 5px"></div>
+
+      <form>
+        <label data-target="ask" title="Ask">
+          <input type="radio" name="behaviour" value="ask" checked />
+          <img src="../Images/Icon_Ask@scalable.svg" />
+          <span>Ask</span>
+        </label>
+
+        <label data-target="in-window" title="Fullscreen in the window.">
+          <input type="radio" name="behaviour" value="in-window" />
+          <img src="../Images/Icon_InWindow_Mono@scalable.svg" />
+          <span>In-Window</span>
+        </label>
+
+        <label data-target="fullscreen" title="Fullscreen in the screen.">
+          <input type="radio" name="behaviour" value="fullscreen" />
+          <img src="../Images/Icon_EnterFullscreen@scalable.svg" />
+          <span>Fullscreen</span>
+        </label>
+
+        <hide-if-no-picture-in-picture>
+          <label data-target="picture-in-picture" title="Picture-in-Picture mode.">
+            <input type="radio" name="picture_in_picture" />
+            <img src="../Images/Icon_PiP@scalable.svg" />
+            <span>Pic-in-Pic</span>
+          </label>
+        </hide-if-no-picture-in-picture>
+
+      </form>
+    </div>
+  </div>
+  <script src="../Javascript/browser-polyfill.min.js"></script>
+  <script src="./Popup.js" type="module"></script>
+</body>
+
 </html>

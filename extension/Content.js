@@ -85,40 +85,40 @@ let on_webpage = (strings, ...values) => {
 let all_communication_id = 0;
 let external_function_parent =
   (function_id) =>
-  async (...args) => {
-    let request_id = `FROM_CONTENT:${all_communication_id}`;
-    all_communication_id = all_communication_id + 1;
+    async (...args) => {
+      let request_id = `FROM_CONTENT:${all_communication_id}`;
+      all_communication_id = all_communication_id + 1;
 
-    if (window.parent === window) {
-      return;
-    }
+      if (window.parent === window) {
+        return;
+      }
 
-    window.parent.postMessage(
-      {
-        type: "CUSTOM_WINDOWED_FROM_PAGE",
-        request_id: request_id,
-        function_id: function_id,
-        args: args,
-      },
-      "*",
-    );
+      window.parent.postMessage(
+        {
+          type: "CUSTOM_WINDOWED_FROM_PAGE",
+          request_id: request_id,
+          function_id: function_id,
+          args: args,
+        },
+        "*",
+      );
 
-    return new Promise((resolve, reject) => {
-      let listener = (event) => {
-        // We only accept messages from ourselves
-        if (event.source != window.parent) return;
-        if (event.data == null) return;
+      return new Promise((resolve, reject) => {
+        let listener = (event) => {
+          // We only accept messages from ourselves
+          if (event.source != window.parent) return;
+          if (event.data == null) return;
 
-        if (event.data.type === "CUSTOM_WINDOWED_TO_PAGE") {
-          if (event.data.request_id === request_id) {
-            window.removeEventListener("message", listener);
-            resolve(event.data.result);
+          if (event.data.type === "CUSTOM_WINDOWED_TO_PAGE") {
+            if (event.data.request_id === request_id) {
+              window.removeEventListener("message", listener);
+              resolve(event.data.result);
+            }
           }
-        }
-      };
-      window.addEventListener("message", listener);
-    });
-  };
+        };
+        window.addEventListener("message", listener);
+      });
+    };
 
 let enable_selector = (element, key) => {
   element.dataset[key] = true;
@@ -152,12 +152,12 @@ let Button = ({ icon, title, text, target }) => `
 const code_to_insert_in_page = on_webpage`{
   // Alliases for different browsers
   let requestFullscreen_aliasses = ${JSON.stringify(
-    requestFullscreen_aliasses,
-  )};
+  requestFullscreen_aliasses,
+)};
   let exitFullscreen_aliasses = ${JSON.stringify(exitFullscreen_aliasses)};
   let fullscreenelement_aliasses = ${JSON.stringify(
-    fullscreenelement_aliasses,
-  )};
+  fullscreenelement_aliasses,
+)};
   let fullscreenchange_aliasses = ${JSON.stringify(fullscreenchange_aliasses)};
 
   const send_event = (element, type) => {
@@ -263,9 +263,9 @@ const code_to_insert_in_page = on_webpage`{
     );
     video_element =
       video_element != null &&
-      video_element.requestPictureInPicture != null &&
-      video_element.readyState >= 1 &&
-      !video_element.disablePictureInPicture
+        video_element.requestPictureInPicture != null &&
+        video_element.readyState >= 1 &&
+        !video_element.disablePictureInPicture
         ? video_element
         : null;
 
@@ -307,7 +307,7 @@ const code_to_insert_in_page = on_webpage`{
     if (
       clicked_element_still_exists &&
       Date.now() - last_click_timestamp <
-        CLICK_IS_CONSIDERED_FULLSCREEN_CLICK_DELAY
+      CLICK_IS_CONSIDERED_FULLSCREEN_CLICK_DELAY
     ) {
       let top_vs_bottom =
         last_click_y < window.innerHeight / 2
@@ -328,32 +328,31 @@ const code_to_insert_in_page = on_webpage`{
             padding: 10px;
             font-size: 16px;
           ">
-          ${
-            video_element
-              ? Button({
-                  icon: browser.runtime.getURL("Images/Icon_PiP@scalable.svg"),
-                  text: "Pic-in-Pic",
-                  title: "Picture-in-picture (p)",
-                  target: "picture-in-picture",
-                })
-              : ""
-          }
+          ${video_element
+          ? Button({
+            icon: browser.runtime.getURL("Images/Icon_PiP@scalable.svg"),
+            text: "Pic-in-Pic",
+            title: "Picture-in-picture (p)",
+            target: "picture-in-picture",
+          })
+          : ""
+        }
           ${Button({
-            icon: browser.runtime.getURL(
-              "Images/Icon_InWindow_Mono@scalable.svg",
-            ),
-            text: "In-window",
-            title: "In-window (i)",
-            target: "in-window",
-          })}
+          icon: browser.runtime.getURL(
+            "Images/Icon_InWindow_Mono@scalable.svg",
+          ),
+          text: "In-window",
+          title: "In-window (i)",
+          target: "in-window",
+        })}
           ${Button({
-            icon: browser.runtime.getURL(
-              "Images/Icon_EnterFullscreen@scalable.svg",
-            ),
-            text: "Fullscreen",
-            title: "Fullscreen (f)",
-            target: "fullscreen",
-          })}
+          icon: browser.runtime.getURL(
+            "Images/Icon_EnterFullscreen@scalable.svg",
+          ),
+          text: "Fullscreen",
+          title: "Fullscreen (f)",
+          target: "fullscreen",
+        })}
         </div>
       `);
       shadowRoot.appendChild(popup);
@@ -381,34 +380,33 @@ const code_to_insert_in_page = on_webpage`{
           ">
             <div style="padding: 1.25em; padding-bottom: 0.25em; padding-top: 0.25em">Enter fullscreen</div>
             <div style="height: 10px"></div>
-            ${
-              video_element
-                ? Button({
-                    icon: browser.runtime.getURL(
-                      "Images/Icon_PiP@scalable.svg",
-                    ),
-                    text: "Pic-in-Pic",
-                    title: "Picture in picture (p)",
-                    target: "picture-in-picture",
-                  })
-                : ""
-            }
+            ${video_element
+          ? Button({
+            icon: browser.runtime.getURL(
+              "Images/Icon_PiP@scalable.svg",
+            ),
+            text: "Pic-in-Pic",
+            title: "Picture in picture (p)",
+            target: "picture-in-picture",
+          })
+          : ""
+        }
             ${Button({
-              icon: browser.runtime.getURL(
-                "Images/Icon_InWindow_Mono@scalable.svg",
-              ),
-              text: "In-window",
-              title: "In-window (i)",
-              target: "in-window",
-            })}
+          icon: browser.runtime.getURL(
+            "Images/Icon_InWindow_Mono@scalable.svg",
+          ),
+          text: "In-window",
+          title: "In-window (i)",
+          target: "in-window",
+        })}
             ${Button({
-              icon: browser.runtime.getURL(
-                "Images/Icon_EnterFullscreen@scalable.svg",
-              ),
-              text: "Fullscreen",
-              title: "Fullscreen (f)",
-              target: "fullscreen",
-            })}
+          icon: browser.runtime.getURL(
+            "Images/Icon_EnterFullscreen@scalable.svg",
+          ),
+          text: "Fullscreen",
+          title: "Fullscreen (f)",
+          target: "fullscreen",
+        })}
           </div>
         </div>
       `);
@@ -626,8 +624,7 @@ const code_to_insert_in_page = on_webpage`{
     }
   }
 
-  ${
-    "" /* NOTE Replace all the `requestFullscreen` aliasses with calls to my own version */
+  ${"" /* NOTE Replace all the `requestFullscreen` aliasses with calls to my own version */
   }
   let original_requestFullscreen = null;
   requestFullscreen_aliasses.forEach(requestFullscreenAlias => {
@@ -640,8 +637,7 @@ const code_to_insert_in_page = on_webpage`{
     }
   });
 
-  ${
-    "" /* NOTE Replace all the `exitFullscreen` aliasses with calls to my own version */
+  ${"" /* NOTE Replace all the `exitFullscreen` aliasses with calls to my own version */
   }
   let original_exitFullscreen = null;
   exitFullscreen_aliasses.forEach(exitFullscreenAlias => {
@@ -732,7 +728,7 @@ const send_fullscreen_events = () => {
 // On Firefox however, this is not the case, and I might (because firefox screws me with CSP)
 // need to use this quirk to work on all pages
 
-let clear_listeners = () => {};
+let clear_listeners = () => { };
 
 let delay = (ms) => {
   return new Promise((resolve) => {
@@ -800,6 +796,7 @@ let popup_css = `
   }
   [data-target]:hover {
     filter: brightness(0.9);
+    border-radius: 5px;
   }
 
   [data-target] > img {
@@ -875,19 +872,24 @@ const parent_elements = function* (element) {
  * @param {{ type: string, [key: string]: any }} message
  */
 let send_chrome_message = async (message) => {
-  let { type, value } = await browser.runtime.sendMessage(message);
-  if (type === "resolve") {
-    return value;
-  } else {
-    let err = new Error(value.message);
-    err.stack = value.stack;
-    // err.stack = [
-    //   ...x.value.stack.split('\n'),
-    //   'From postMessage to background page',
-    //   ...stack,
-    // ].join('\n');
-    throw err;
-  }
+  // for Safari, force to send default values
+  return { mode: "ask", pip: false };
+
+  // for Chrome
+  //  let { type, value } = await browser.runtime.sendMessage(message);
+  //  if (type === "resolve") {
+  //    console.warn("resolve value", value);
+  //    return value;
+  //  } else {
+  //    let err = new Error(value.message);
+  //    err.stack = value.stack;
+  //    // err.stack = [
+  //    //   ...x.value.stack.split('\n'),
+  //    //   'From postMessage to background page',
+  //    //   ...stack,
+  //    // ].join('\n');
+  //    throw err;
+  //  }
 };
 
 let CLICK_IS_CONSIDERED_FULLSCREEN_CLICK_DELAY = 1 * 1000;
@@ -904,7 +906,7 @@ let clear_popup = () => {
   if (last_popup != null) {
     try {
       document.body.removeChild(last_popup);
-    } catch (err) {}
+    } catch (err) { }
     last_popup = null;
     return true;
   }
@@ -1244,7 +1246,9 @@ let onEscapePress = (fn) => {
 
 let check_disabled_state = async () => {
   try {
+    console.warn("-0-", get_host_config_local());
     let { mode, pip } = await get_host_config_local();
+    console.warn("--->", mode, pip)
     window.postMessage(
       {
         type: "WINDOWED-notify",

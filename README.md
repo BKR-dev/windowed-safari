@@ -12,8 +12,8 @@ It has the same functionality as the [Chrome extension](https://chromewebstore.g
 <!-- TABLE BODY -->
 <tr>
   <td valign="middle" align="center"><img src="extension/Images/Icon-512.png" width="48"></td>
-  <td valign="middle" align="center"><tt>1.0.0</tt></td>
-  <td valign="middle" align="center"><a href="https://github.com/kaiyuyue/Windowed-Safari/releases/download/1.0.0/Windowed.app.zip"><tt>Download</tt></a></td>
+  <td valign="middle" align="center"><tt>1.0.1</tt></td>
+  <td valign="middle" align="center"><a href="https://github.com/kaiyuyue/Windowed-Safari/releases/download/1.0.1/Windowed.app.zip"><tt>Download</tt></a></td>
 </tr>
 </table>
 <br>
