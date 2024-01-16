@@ -8,8 +8,7 @@
   "browser_action": {
     "default_popup": "Popup/Popup.html",
     "default_icon": {
-      "32": "/Images/Icon_Windowed_Mono@1x.svg",
-      "64": "/Images/Icon_Windowed_Mono@1x.svg"
+      "1024": "/Images/Icon-1024.png"
     }
   },
   "content_scripts": [
@@ -32,14 +31,6 @@
     "script_to_insert_directly_into_page.js"
   ],
   "icons": {
-      "16": "/Images/Icon-16.png",
-      "32": "/Images/Icon-32.png",
-      "48": "/Images/Icon-48.png",
-      "64": "/Images/Icon-64.png",
-      "96": "/Images/Icon-96.png",
-      "128": "/Images/Icon-128.png",
-      "256": "/Images/Icon-256.png",
-      "512": "/Images/Icon-512.png",
-      "1024": "/Images/Icon-1024.png",
+      "1024": "/Images/icon.iconset/icon_1024.png"
   }
 }
