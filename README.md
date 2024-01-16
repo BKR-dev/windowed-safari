@@ -59,8 +59,7 @@
 ## Development
 
 - Clone the repo
-- Run `bash convert.sh` to convert the original Chrome extension to Safari extension (the converted extension will be in the `windowed-safari-app` folder)
-- Develop and modify the code in Xcode
+- The development project for Xcode is `windowed-safari-app` and open it in Xcode.
 - Contributions and PRs are definitely welcome to make it better for Safari
 
 > [!NOTE]
