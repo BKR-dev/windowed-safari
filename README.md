@@ -1,23 +1,12 @@
-## Windowed for Safari
+<img src="extension/Images/icon.iconset/icon_512.png" width="220" alt="App icon" align="left"/>
 
-The [Windowed extension](https://github.com/dralletje/Windowed) for [Apple Safari](https://www.apple.com/safari/).
-It has the same functionality as the [Chrome extension](https://chromewebstore.google.com/detail/windowed-floating-youtube/gibipneadnbflmkebnmcbgjdkngkbklb).
+<div>
+<h2>Windowed - for Apple Safari</h2>
+<p>Changes fullscreen buttons to go into a popup. It has the same functionality as the <a href="https://chromewebstore.google.com/detail/windowed-floating-youtube/gibipneadnbflmkebnmcbgjdkngkbklb">Chrome extension</a></p>
+<a href="https://github.com/MonitorControl/MonitorControl/releases"><img src="assets/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
+</div>
 
-<br>
-<table cellpadding="2">
-<!-- TABLE HEADER -->
-<th valign="middle">Windowed</th>
-<th valign="middle">Version</th>
-<th valign="middle">Link</th>
-<!-- TABLE BODY -->
-<tr>
-  <td valign="middle" align="center"><img src="extension/Images/Icon-512.png" width="48"></td>
-  <td valign="middle" align="center"><tt>1.0.1</tt></td>
-  <td valign="middle" align="center"><a href="https://github.com/kaiyuyue/Windowed-Safari/releases/download/1.0.1/Windowed.app.zip"><tt>Download</tt></a></td>
-</tr>
-</table>
-<br>
-
+<br/><br/>
 
 ## Installation
 
