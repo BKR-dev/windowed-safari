@@ -1,4 +1,4 @@
-<img src="extension/Images/icon.iconset/icon_512.png" width="220" alt="App icon" align="left"/>
+<img src="extension/Images/icon.iconset/icon_1024.png" width="220" alt="App icon" align="left"/>
 
 <div>
 <h2>Windowed - for Apple Safari</h2>
