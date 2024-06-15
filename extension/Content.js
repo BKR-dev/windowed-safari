@@ -332,7 +332,7 @@ const code_to_insert_in_page = on_webpage`{
           ? Button({
             icon: browser.runtime.getURL("Images/Icon_PiP@scalable.svg"),
             text: "Pic-in-Pic",
-            title: "Picture-in-picture (p)",
+            title: "Picture-in-Picture (p)",
             target: "picture-in-picture",
           })
           : ""
@@ -342,7 +342,7 @@ const code_to_insert_in_page = on_webpage`{
             "Images/Icon_InWindow_Mono@scalable.svg",
           ),
           text: "In-Window",
-          title: "In-window (i)",
+          title: "In-Window (i)",
           target: "in-window",
         })}
           ${Button({
