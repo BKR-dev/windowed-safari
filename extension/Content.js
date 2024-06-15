@@ -341,7 +341,7 @@ const code_to_insert_in_page = on_webpage`{
           icon: browser.runtime.getURL(
             "Images/Icon_InWindow_Mono@scalable.svg",
           ),
-          text: "In-window",
+          text: "In-Window",
           title: "In-window (i)",
           target: "in-window",
         })}
