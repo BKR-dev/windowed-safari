@@ -3,7 +3,7 @@
 <div>
 <h3>Windowed - for Apple Safari</h3>
 <p>Changes fullscreen buttons to go into a popup. It has the same functionality as the <a href="https://chromewebstore.google.com/detail/windowed-floating-youtube/gibipneadnbflmkebnmcbgjdkngkbklb">Chrome extension</a>.</p>
-<a href="https://github.com/kaiyuyue/Windowed-Safari/releases/download/1.0.2/Windowed.app.zip"><img src="assets/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
+<a href="https://github.com/kaiyuyue/Windowed-Safari/releases"><img src="assets/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
 <br/><br/>
