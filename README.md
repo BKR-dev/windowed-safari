@@ -1,4 +1,4 @@
-<img src="extension/Images/icon.iconset/icon_1024.png" width="220" alt="App icon" align="left"/>
+<img src="extension/Images/icon.iconset/icon_1024.png" width="237" alt="App icon" align="left"/>
 
 <div>
 <h3>Windowed - for Apple Safari</h3>
@@ -6,6 +6,7 @@
   Changes fullscreen buttons to go into a popup. 
   It has the same functionality as the <a href="https://chromewebstore.google.com/detail/windowed-floating-youtube/gibipneadnbflmkebnmcbgjdkngkbklb">Chrome extension</a>.
   It is released with the universal arch - Apple Silicon (M-Chip) and Intel (x86_64 Chip).
+  It also supports dark mode.
 </p>
 <a href="https://github.com/kaiyuyue/Windowed-Safari/releases"><img src="assets/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
