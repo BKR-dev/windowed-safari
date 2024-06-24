@@ -2,11 +2,18 @@
 
 <div>
 <h3>Windowed - for Apple Safari</h3>
-<p>Changes fullscreen buttons to go into a popup. It has the same functionality as the <a href="https://chromewebstore.google.com/detail/windowed-floating-youtube/gibipneadnbflmkebnmcbgjdkngkbklb">Chrome extension</a>.</p>
+<p>
+  Changes fullscreen buttons to go into a popup. 
+  It has the same functionality as the <a href="https://chromewebstore.google.com/detail/windowed-floating-youtube/gibipneadnbflmkebnmcbgjdkngkbklb">Chrome extension</a>.
+  It is released with the universal arch - Apple Silicon (M-Chip) and Intel (x86_64 Chip).
+</p>
 <a href="https://github.com/kaiyuyue/Windowed-Safari/releases"><img src="assets/macos_badge_noborder.png" width="175" alt="Download for macOS"/></a>
 </div>
 
 <br/><br/>
+
+> [!IMPORTANT]
+> The distributed app is directly compiled with the code in this repo. It **DOES NOT** collect any data from any location running in the Safari on MacOS.
 
 ## Installation
 
@@ -60,10 +67,10 @@
 
 - Clone the repo
 - The development project for Xcode is `windowed-safari-app` and open it in Xcode.
-- Contributions and PRs are definitely welcome to make it better for Safari
+- Contributions and PRs are welcome to make it better for Safari.
 
 > [!NOTE]
-> The released extension is signed with my own Apple Developer ID without any verification from Apple Developer Program. So it won't show up in the Apple Extension Gallery - App Store. It would be great if someone can help me to sign the extension with a verified Apple Developer ID to distribute it in the App Store. Please contact me if you are willing to help. :bowtie:
+> The released extension is signed with my own Apple Developer ID without any verification from the Apple Developer Program. So it won't show up in the Apple Extension Gallery - App Store. It would be great if someone can help me to sign the extension with a verified Apple Developer ID to distribute it in the App Store. Please get in touch with me if you are willing to help. :bowtie:
 
 ## Credits
 
