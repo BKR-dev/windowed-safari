@@ -69,7 +69,7 @@
 - Clone the repo 
 
 ```bash
-https://github.com/kaiyuyue/windowed-safari.git
+git clone https://github.com/kaiyuyue/windowed-safari.git
 ```
 
 - Then open the terminal and run the following command to install the dependencies.
