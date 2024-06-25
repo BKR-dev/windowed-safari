@@ -14,7 +14,7 @@
 <br/><br/>
 
 > [!IMPORTANT]
-> The distributed app is directly compiled with the code in this repo. It **DOES NOT** collect any data from any location running in the Safari on MacOS.
+> The distributed app is directly compiled with the code in this repo. It **DOES NOT** collect any data from any location running in the Safari on MacOS. Same as the Chrome extension in the [original disclaimer](PrivacyPolicyForEdgeWebstore.md).
 
 ## Installation
 
@@ -66,8 +66,20 @@
 
 ## Development
 
-- Clone the repo
-- The development project for Xcode is `windowed-safari-app` and open it in Xcode.
+- Clone the repo 
+
+```bash
+https://github.com/kaiyuyue/windowed-safari.git
+```
+
+- Then open the terminal and run the following command to install the dependencies.
+
+```bash
+./xcode_run.sh
+```
+
+- It will automatically open the Xcode project. Happy coding!
+
 - Contributions and PRs are welcome to make it better for Safari.
 
 > [!NOTE]
