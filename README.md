@@ -14,7 +14,7 @@
 <br/><br/>
 
 > [!IMPORTANT]
-> The distributed app is directly compiled with the code in this repo. It **DOES NOT** collect any data from any location running in the Safari on MacOS. Same as the Chrome extension in the [original disclaimer](PrivacyPolicyForEdgeWebstore.md).
+> The distributed app is directly compiled with the code in this repo. It **DOES NOT** collect any data from any location running in the Safari on MacOS. Same as the Chrome extension in the [original disclaimer](PrivacyPolicy.md).
 
 ## Installation
 
