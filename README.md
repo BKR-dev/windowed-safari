@@ -72,13 +72,13 @@
 git clone https://github.com/kaiyuyue/windowed-safari.git
 ```
 
-- Then open the terminal and run the following command to install the dependencies.
+- Then open the terminal and run the following command to launch xcode project
 
 ```bash
 ./xcode_run.sh
 ```
 
-- It will automatically open the Xcode project. Happy coding!
+- It will automatically open the project in Xcode. Happy coding!
 
 - Contributions and PRs are welcome to make it better for Safari.
 
