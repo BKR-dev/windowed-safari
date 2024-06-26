@@ -75,7 +75,7 @@ git clone https://github.com/kaiyuyue/windowed-safari.git
 - Then open the terminal and run the following command to launch xcode project
 
 ```bash
-./xcode_run.sh
+cd windowed-safari && ./xcode_run.sh
 ```
 
 - It will automatically open the project in Xcode. Happy coding!
